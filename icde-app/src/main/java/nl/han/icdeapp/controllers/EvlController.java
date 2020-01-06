@@ -1,13 +1,17 @@
 package nl.han.icdeapp.controllers;
+import nl.han.icdeapp.exceptions.*;
 import nl.han.icdeapp.models.*;
 
+import java.util.Optional;
 import java.net.URI;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,8 +42,6 @@ public class EvlController {
 // Heet eigenlijk EvlResource?
 @RestController
 public class EvlController {
-
-	// curl -d '{"name":"Coderen2"}' -H "Content-Type: application/json" -X POST http://localhost:8080/evls
 	
 	@Autowired
 	private EvlRepository evlRepository;
@@ -60,23 +62,23 @@ public class EvlController {
 		return ResponseEntity.created(location).build();
 	}
 	
-	/*
-	@GetMapping("/students/{id}")
-	public Student retrieveStudent(@PathVariable long id) {
-		Optional<Student> student = studentRepository.findById(id);
+	@GetMapping("/evls/{id}")
+	public Evl retrieveEvl(@PathVariable long id) {
+		Optional<Evl> evl = evlRepository.findById(id);
 
-		if (!student.isPresent())
-			throw new StudentNotFoundException("id-" + id);
+		if (!evl.isPresent())
+			throw new EvlNotFoundException();
 
-		return student.get();
+		return evl.get();
 	}
 
-	@DeleteMapping("/students/{id}")
-	public void deleteStudent(@PathVariable long id) {
-		studentRepository.deleteById(id);
+	@DeleteMapping("/evls/{id}")
+	public void deleteEvl(@PathVariable long id) {
+		evlRepository.deleteById(id);
 	}
 	
-	@PutMapping("/students/{id}")
+	/*
+	@PutMapping("/evls/{id}")
 	public ResponseEntity<Object> updateStudent(@RequestBody Student student, @PathVariable long id) {
 
 		Optional<Student> studentOptional = studentRepository.findById(id);
@@ -91,4 +93,58 @@ public class EvlController {
 		return ResponseEntity.noContent().build();
 	}
 	*/
+	/*
+
+	// curl -d '{"name":"Coderen2"}' -H "Content-Type: application/json" -X POST http://localhost:8080/evls
+
+	 * @Autowired
+    private IFooService service;
+    @GetMapping
+    public List<Foo> findAll() {
+return service.findAll(); }
+@GetMapping(value = “/{id}”)
+public Foo findById(@PathVariable(“id”) Long id) {
+return RestPreconditions.checkFound(service.findById(id)); }
+@PostMapping @ResponseStatus(HttpStatus.CREATED)
+public Long create(@RequestBody Foo resource) {
+Preconditions.checkNotNull(resource);
+return service.create(resource); }
+@PutMapping(value = “/{id}”)
+@ResponseStatus(HttpStatus.OK)
+public void update(@PathVariable( “id” ) Long id, @RequestBody
+Foo resource) {
+Preconditions.checkNotNull(resource); RestPreconditions.checkNotNull(service.getById(resource.
+getId())); service.update(resource);
+}
+@DeleteMapping(value = “/{id}”) @ResponseStatus(HttpStatus.OK)
+public void delete(@PathVariable(“id”) Long id) {
+service.deleteById(id); }
+
+curl --header “Accept: application/json” http://localhost:8080/spring-boot-rest/foos/1 
+
+curl -i -X PUT -H “Content-Type: application/json” -d ‘{“id”:”83”,”name”:”klik”}’ http://localhost:8080/spring- boot-rest/foos/1 
+
+curl -i \ -H “Accept: application/json” \ -H “Content-Type:application/json” \ -X POST --data 
+‘{“username”: “johnny”, “password”: “password”}’ “https:// localhost:8080/.../request” 
+
+@GetMapping(value = “/{id}”) public Foo findById(@PathVariable(“id”) Long id, HttpServletResponse response) { 
+try { Foo resourceById = RestPreconditions. 
+checkFound(service.findOne(id)); 
+eventPublisher.publishEvent(new SingleResourceRetrievedEvent(this, response)); 
+        return resourceById;
+     }
+    catch (MyResourceNotFoundException exc) {
+         throw new ResponseStatusException(
+} } 
+
+
+
+*/
+
+
+
+
+
+
+
 }
