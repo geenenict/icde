@@ -60,6 +60,42 @@
 			"response": []
 		},
 		{
+			"name": "Edit Specific Evl",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"CoderenAangepast\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/evls/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"evls",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Get Specific Evl",
 			"request": {
 				"method": "GET",
