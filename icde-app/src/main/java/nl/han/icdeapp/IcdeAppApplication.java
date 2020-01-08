@@ -14,13 +14,5 @@ public class IcdeAppApplication {
 	
 	public static void main(String[] args) {
 		SpringApplication.run(IcdeAppApplication.class, args);
-		EvlController test = new EvlController();
 	}
-
-	//@RequestMapping("/")
-	//@ResponseBody
-	//String home() {
-	//	return "<h1>Greetings from Java Tutorial Network TEST</h1>";
-	//}
-	
 }
