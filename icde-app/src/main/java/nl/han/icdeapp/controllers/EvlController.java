@@ -29,6 +29,8 @@ import nl.han.icdeapp.repositories.EvlRepository;
 
 // https://www.springboottutorial.com/spring-boot-crud-rest-service-with-jpa-hibernate
 // https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-2-rest-service-basic
+// https://www.tutorialspoint.com/spring_boot/spring_boot_rest_template.htm
+
 
 //@RestController -> adds @Controller + @ResponseBody -> @ResponseBody does not return html files but views
 @Controller
