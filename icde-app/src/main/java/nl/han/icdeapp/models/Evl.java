@@ -11,6 +11,7 @@ public class Evl {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 	
+	// VERVANGEN DOOR MESSAGES INTERNATIONALIZATION
     @NotBlank(message = "Naam is verplicht")
     private String name;
     
