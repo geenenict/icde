@@ -1,9 +1,24 @@
+Personal spaces doorzoeken:
+
+Ruud Geerlings, Amy Vissers en Harry Achterberg
+
+Coen Bogaard en Jordi Wildschut
+
+Bjorn van den Brink, Bjorn Lentjes, Stefan Kummeling
+
+Edwin Vos en Mischa Thullner
+
+
 - https://stackoverflow.com/questions/48880655/calling-a-spring-rest-controller-from-a-web-controller
 - Conversie met service laag ertussen
 - GUI omzetten naar jQuery volgens voorbeeld-app
 
+- Doornemen -> http://oosedt.wiki.icaprojecten.nl/confluence/pages/viewpage.action?pageId=122191886
+
 - Mockito tutorial afronden
 - Onderwijsonline doornemen + alle slides
+- Google Cloud SQL beslissing nemen
+- jUnit beslissing nemen
 
 - Naast restcontroller test, ook service test en controller test?
 
@@ -21,6 +36,16 @@
 - Vastleggen dat wij default logging gebruiken naar een file, maar met ZipKin kan dit uitgebreid worden zodat dit makkelijker inzichtelijk is
 - Domein model en start SDD
 - SRS document met extra UML
+- JAR packagen als finaal product?
+
+
+Onderbouwing keuze UML generator:
+- http://amateras.osdn.jp/cgi-bin/fswiki_en/wiki.cgi?page=AmaterasUML
+- https://www.eclipse.org/umlgen/ -> not compatible with STS (older version)
+- UML Lab -> geen sequence diagrams
+- ObjectAid
+- Ook vastleggen /Applications/STS.app/Contents/Eclipse/plugins -> handmatig voor Amaturas
+- Vastleggen drag n drop eclipse marketplace en het feit dat STS op basis van Eclipse is: https://marketplace.eclipse.org/content/uml-lab-modeling-ide
 
 - https://www.tutorialspoint.com/spring_boot/spring_boot_logging.htm -> Auto rotate after reaching 10MB -> ook vastleggen
 - Learning journal

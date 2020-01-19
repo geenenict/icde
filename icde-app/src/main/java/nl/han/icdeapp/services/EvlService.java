@@ -14,6 +14,9 @@ public class EvlService {
 
 	
 	// https://medium.com/stackavenue/why-to-use-service-layer-in-spring-mvc-5f4fc52643c0
+	// https://medium.com/@gustavo.ponce.ch/spring-boot-jquery-datatables-a2e816e2b5e9
+	// https://stackoverflow.com/questions/33004831/spring-mvc-thymeleaf-rest
+	// http://forum.thymeleaf.org/Rest-with-Thymeleaf-td4028635.html
 	
 	@Autowired
 	private EvlRepository EvlRepository;
