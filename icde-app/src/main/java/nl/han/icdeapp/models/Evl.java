@@ -9,18 +9,16 @@ public class Evl {
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private long id;
 	
     @NotBlank(message = "{field_name_ne.text}")
     private String name;
     
     // Constructors
     
-	/*public Evl() {
+	public Evl() {
 		super();
-	}*/
-
-    public Evl() {}
+	}
 
     public Evl(String name) {
         this.name = name;
@@ -28,11 +26,11 @@ public class Evl {
         
     // Getters and setters
 
-	public void setId(Long id) {
+	public void setId(long id) {
 		this.id = id;
 	}
     
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
 

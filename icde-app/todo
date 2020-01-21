@@ -1,4 +1,5 @@
-- Conversie met service laag ertussen + GUI omzetten naar jQuery 
+- Controllers verder opschonen en Service uitbreiden -> https://medium.com/stackavenue/why-to-use-service-layer-in-spring-mvc-5f4fc52643c0
+- GUI omzetten naar jQuery 
  - https://medium.com/stackavenue/why-to-use-service-layer-in-spring-mvc-5f4fc52643c0
  - https://medium.com/@gustavo.ponce.ch/spring-boot-jquery-datatables-a2e816e2b5e9
  - Voorbeeld app voor o.a. jQuery -> link naar bron

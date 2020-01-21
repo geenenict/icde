@@ -16,12 +16,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import nl.han.icdeapp.repositories.EvlRepository;
+import nl.han.icdeapp.services.EvlService;
 
 @RestController
 public class EvlRestController {
 	
 	@Autowired
-	private EvlRepository evlRepository;
+	private EvlService evlService;
 	
 	// Service maken waar restcontroller mee praat, daar kan evlcontroller dan evt. ook mee praten
 	// GUI maken op basis van jQuery aanvullend op thymeleaf
@@ -30,12 +31,12 @@ public class EvlRestController {
 
 	@GetMapping("/evls")
 	public List<Evl> retrieveAllEvls() {
-		return evlRepository.findAll();
+		return evlService.findAll();
 	}
 	
 	@GetMapping("/evls/{id}")
 	public Evl retrieveEvl(@PathVariable long id) {
-		Optional<Evl> evl = evlRepository.findById(id);
+		Optional<Evl> evl = evlService.findById(id);
 
 		if (!evl.isPresent())
 			throw new EvlNotFoundException();
@@ -45,7 +46,7 @@ public class EvlRestController {
 	
 	@PostMapping("/evls")
 	public ResponseEntity<Object> createEvl(@RequestBody Evl evl) {
-		Evl savedEvl = evlRepository.save(evl);
+		Evl savedEvl = evlService.add(evl);
 
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
 				.buildAndExpand(savedEvl.getId()).toUri();
@@ -56,21 +57,21 @@ public class EvlRestController {
 	@PutMapping("/evls/{id}")
 	public ResponseEntity<Object> updateEvl(@RequestBody Evl evl, @PathVariable long id) {
 
-		Optional<Evl> evlOptional = evlRepository.findById(id);
+		Optional<Evl> evlOptional = evlService.findById(id);
 
 		if (!evlOptional.isPresent())
 			return ResponseEntity.notFound().build();
 
 		evl.setId(id);
 		
-		evlRepository.save(evl);
+		evlService.update(evl);
 
 		return ResponseEntity.noContent().build();
 	}
 	
 	@DeleteMapping("/evls/{id}")
 	public void deleteEvl(@PathVariable long id) {
-		evlRepository.deleteById(id);
+		evlService.delete(id);
 	}
     
 }

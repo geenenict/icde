@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import nl.han.icdeapp.repositories.EvlRepository;
+import nl.han.icdeapp.services.EvlService;
 
 // https://www.springboottutorial.com/spring-boot-crud-rest-service-with-jpa-hibernate
 // https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-2-rest-service-basic
@@ -27,7 +27,7 @@ import nl.han.icdeapp.repositories.EvlRepository;
 public class EvlController {
 	
 	@Autowired
-	private EvlRepository evlRepository;
+	private EvlService evlService;
 	
 	// Forms / Thymeleaf
 	
@@ -42,14 +42,14 @@ public class EvlController {
             return "add-evl";
         }
         
-        evlRepository.save(evl);
-        model.addAttribute("evls", evlRepository.findAll());
+        evlService.add(evl);
+        model.addAttribute("evls", evlService.findAll());
         return "index";
     }
     
     @GetMapping("/edit/{id}")
     public String showUpdateEvlForm(@PathVariable("id") long id, Model model) {
-        Evl evl = evlRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("{field_id_nv.text}" + id));
+        Evl evl = evlService.findById(id).orElseThrow(() -> new IllegalArgumentException("#{field_id_nv.text}" + id));
         model.addAttribute("evl", evl);
         return "update-evl";
     }
@@ -61,16 +61,16 @@ public class EvlController {
             return "update-evl";
         }
         		        
-        evlRepository.save(evl);
-        model.addAttribute("evls", evlRepository.findAll());
+        evlService.update(evl);
+        model.addAttribute("evls", evlService.findAll());
         return "index";
     }
     
     @GetMapping("/delete/{id}")
     public String deleteEvl(@PathVariable("id") long id, Model model) {
-        Evl evl = evlRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("{field_id_nv.text}" + id));
-        evlRepository.delete(evl);
-        model.addAttribute("evls", evlRepository.findAll());
+        Evl evl = evlService.findById(id).orElseThrow(() -> new IllegalArgumentException("{field_id_nv.text}" + id));
+        evlService.delete(id);
+        model.addAttribute("evls", evlService.findAll());
         return "index";
     }
     
