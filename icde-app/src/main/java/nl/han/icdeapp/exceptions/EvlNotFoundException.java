@@ -5,6 +5,6 @@ import org.springframework.http.HttpStatus;
 
 //https://stackabuse.com/exception-handling-in-spring/
 
-@ResponseStatus(value=HttpStatus.NOT_FOUND, reason="No such EVL")  // 404
+@ResponseStatus(value=HttpStatus.NOT_FOUND, reason="{evl_spec_na.text}")  // 404
 public class EvlNotFoundException extends RuntimeException {
 }

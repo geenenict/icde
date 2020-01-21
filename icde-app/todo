@@ -1,82 +1,9 @@
-Personal spaces doorzoeken:
+- Conversie met service laag ertussen + GUI omzetten naar jQuery 
+ - https://medium.com/stackavenue/why-to-use-service-layer-in-spring-mvc-5f4fc52643c0
+ - https://medium.com/@gustavo.ponce.ch/spring-boot-jquery-datatables-a2e816e2b5e9
+ - Voorbeeld app voor o.a. jQuery -> link naar bron
+ - REST API conform guidelines + https://auth0.com/blog/exception-handling-and-i18n-on-spring-boots-apis/
 
-Ruud Geerlings, Amy Vissers en Harry Achterberg
-
-Coen Bogaard en Jordi Wildschut
-
-Bjorn van den Brink, Bjorn Lentjes, Stefan Kummeling
-
-Edwin Vos en Mischa Thullner
-
-
-- https://stackoverflow.com/questions/48880655/calling-a-spring-rest-controller-from-a-web-controller
-- Conversie met service laag ertussen
-- GUI omzetten naar jQuery volgens voorbeeld-app
-
-- Doornemen -> http://oosedt.wiki.icaprojecten.nl/confluence/pages/viewpage.action?pageId=122191886
-
-- Mockito tutorial afronden
-- Onderwijsonline doornemen + alle slides
-- Google Cloud SQL beslissing nemen
-- jUnit beslissing nemen
-
-- Naast restcontroller test, ook service test en controller test?
-
-- Swagger api auto koppeling implementeren -> REST API conform richtlijn maken en start Swagger / Postman -> https://www.tutorialspoint.com/spring_boot/spring_boot_enabling_swagger2.htm
-- Internationalization hoort bij clean code -> toevoegen aan documentatie / ook doorvoeren alle tekst naar de properties files
-- Unit tests afronden + REST API op orde
-- Nog een aantal componenten toevoegen
-- Observer pattern voor validaties naar messages + Factory pattern voor Domein beperkingen op velden
-- MySQL koppelen i.p.v. H2 -> https://www.tutorialspoint.com/spring_boot/spring_boot_flyway_database.htm + https://www.tutorialspoint.com/spring_boot/spring_boot_database_handling.htm
- - Ook vastleggen en onderbouwen keuze tussen deze twee
-- Login implementeren -> https://www.tutorialspoint.com/spring_boot/spring_boot_securing_web_applications.htm
- - Google Login met Oauth? -> https://www.tutorialspoint.com/spring_boot/spring_boot_google_oauth2_sign_in.htm
- - Vastleggen verdere mogelijkheden -> https://www.tutorialspoint.com/spring_boot/spring_boot_oauth2_with_jwt.htm <- Oauth adapter pattern (toch implementeren?)
-- Vastleggen zelfs Google Cloud SQL mogelijk -> https://www.tutorialspoint.com/spring_boot/spring_boot_google_cloud_platform.htm
-- Vastleggen dat wij default logging gebruiken naar een file, maar met ZipKin kan dit uitgebreid worden zodat dit makkelijker inzichtelijk is
-- Domein model en start SDD
-- SRS document met extra UML
-- JAR packagen als finaal product?
-
-
-Onderbouwing keuze UML generator:
-- http://amateras.osdn.jp/cgi-bin/fswiki_en/wiki.cgi?page=AmaterasUML
-- https://www.eclipse.org/umlgen/ -> not compatible with STS (older version)
-- UML Lab -> geen sequence diagrams
-- ObjectAid
-- Ook vastleggen /Applications/STS.app/Contents/Eclipse/plugins -> handmatig voor Amaturas
-- Vastleggen drag n drop eclipse marketplace en het feit dat STS op basis van Eclipse is: https://marketplace.eclipse.org/content/uml-lab-modeling-ide
-
-- https://www.tutorialspoint.com/spring_boot/spring_boot_logging.htm -> Auto rotate after reaching 10MB -> ook vastleggen
-- Learning journal
-- Exceptions nalopen en uitbreiden/toevoegen
-- Vastleggen libraries voor Gmail en Twilio voor SMS -> erg makkelijk te koppelen
-- http://oosedt.wiki.icaprojecten.nl/confluence/pages/viewpage.action?spaceKey=~SPA.Jansen1@student.han.nl&title=Learning+Journal
-en onderhoud inplannen alle auto's -> Vanaf 21 december moet alles klaar zijn
-- Learning Journal updaten met screenshots van JIRA en uitleg opbouw
-- JIRA sprint eerste Use Case aanpassen -> Na elke sprint een meeting
-inplannen / Iterative Grading Reqest met John
-- Adobe Connect bijwerken
-- Use case = CRUD van opleiding, semester en EVL
-- Vastleggen 3rd party -> https://www.tutorialspoint.com/spring_boot/spring_boot_hystrix.htm
-- Technisch Ontwerp starten
-- Functioneel Ontwerp starten
-- Domein model maken voor de use case + SD maken voor use case
-- Opnemen in Ontwerp -> Zuul & Eureka + Actuator (ook Docker image/container kan gegenereerd worden) (ook Spring Cloud Sleuth / ZipKin) kunnen gebruikt worden om meerdere microservices te draaien en naadloos op elkaar aan te laten sluiten -> dit maakt de icde spring applicatie erg flexibel
-- Toevoegen requirements -> SSL
-- Requirements allemaal inleveren
-- Use Case -> crud van opleiding etc.
-- Git, Jira, Confluence geupdate
-- Draaiende code met Unit tests (zonder GUI)
-- When applied this commit will ...
-- GUI -> https://www.thymeleaf.org/
-- Spring Security -> https://springframework.guru/spring-boot-web-application-part-2-using-thymeleaf/ + https://springframework.guru/using-the-h2-database-console-in-spring-boot-with-spring-security/
-- https://www.tutorialspoint.com/spring_boot/spring_boot_code_structure.htm
-- https://spring.io/guides/gs/rest-service/
-- https://springframework.guru/spring-boot-web-application-part-4-spring-mvc/
-- https://www.springboottutorial.com/spring-boot-crud-rest-service-with-jpa-hibernate
-- https://www.baeldung.com/spring-bean
-- https://www.concretepage.com/spring-5/spring-data-crudrepository-example
 - Factory pattern -> https://www.baeldung.com/javax-validation
 - Auto H2 in mem database ook bij document uitschrijven -> https://www.tutorialspoint.com/spring_boot/spring_boot_introduction.htm
 - https://deviq.com/solid/
@@ -87,3 +14,40 @@ inplannen / Iterative Grading Reqest met John
 - https://www.tutorialspoint.com/spring_boot/spring_boot_file_handling.htm -> File upload ook in requirements en implementeren
 - AJAX implementatie + viewcontroller -> https://www.tutorialspoint.com/spring_boot/spring_boot_consuming_restful_web_services.htm
 - CORS security layer -> https://www.tutorialspoint.com/spring_boot/spring_boot_cors_support.htm
+
+- Naast restcontroller test, ook service test en controller test? -> tests afronden
+- Swagger api auto koppeling implementeren -> REST API conform richtlijn maken en start Swagger / Postman -> https://www.tutorialspoint.com/spring_boot/spring_boot_enabling_swagger2.htm
+- Google Cloud SQL beslissing nemen (https://www.tutorialspoint.com/spring_boot/spring_boot_google_cloud_platform.htm) 
+  + MySQL koppelen i.p.v. H2 -> https://www.tutorialspoint.com/spring_boot/spring_boot_flyway_database.htm 
+  + https://www.tutorialspoint.com/spring_boot/spring_boot_database_handling.htm
+
+- Observer pattern voor validaties naar messages + Factory pattern voor Domein beperkingen op velden
+- Login implementeren -> https://www.tutorialspoint.com/spring_boot/spring_boot_securing_web_applications.htm
+ - Google Login met Oauth 
+  + https://www.tutorialspoint.com/spring_boot/spring_boot_google_oauth2_sign_in.htm
+  + Vastleggen verdere mogelijkheden -> https://www.tutorialspoint.com/spring_boot/spring_boot_oauth2_with_jwt.htm
+  + Oauth adapter pattern
+  + Spring Security -> https://springframework.guru/spring-boot-web-application-part-2-using-thymeleaf/ 
+  + https://springframework.guru/using-the-h2-database-console-in-spring-boot-with-spring-security/
+
+Functionaliteit/Requirements implementeren:
+- De EVL-beschrijving (Modulebeschrijving EVL OOSE.docx). Idealiter kunnen we deze met de ICDE-tool genereren
+- De toetsplanning in Excel (toetsrooster-oosedt.xlsx) en als plaatje (globale-planning-voor-studenten.png), deze willen we ook kunnen genereren maar ook waarschuwingen inbouwen als er meer dan 3 toetsen/opdrachten tegelijk in 1 week lopen.
+- De lesplanning (Lesplanning-1819.xlsx). Hier zie je (vooral voor de eerste weken) een koppeling van een les aan rubrics. We willen met de ICDE-tool kunnen valideren of de lessen 100% aansluiten bij de toetsen/opdrachten die we geven. Elke toets/opdracht wordt beoordeeld op basis van beoordelingscriteria, deze criteria hebben we ook aan de lessen hangen. De tool zou kunnen checken of we wel voor alle toetsen lessen hebben en andersom.
+
+
+Refactor het onderstaande (of het is toegepast):
+- Je kent verschillende manieren om software in grotere modules te verdelen zoals het gebruik van components, layer pattern en principes zoals high cohesion en low coupling.
+- Exceptions nalopen en uitbreiden/toevoegen
+
+- Nog een aantal componenten toevoegen
+- https://itnext.io/solid-principles-explanation-and-examples-715b975dcad4 -> Refactoren
+- Alles testen, nalopen en checken op verbeterpunten
+- Werkend product voor toevoegen opleiding met EVL's en lessen
+- Alle overige componenten toevoegen en het product afronden
+
+- JAR packagen als finaal product + branch merges volgens gitflow
+
+- Technisch Ontwerp starten
+- Functioneel Ontwerp starten
+- Domein model maken voor de use case + SD maken voor use case

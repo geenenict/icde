@@ -49,7 +49,7 @@ public class EvlController {
     
     @GetMapping("/edit/{id}")
     public String showUpdateEvlForm(@PathVariable("id") long id, Model model) {
-        Evl evl = evlRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid Evl id:" + id));
+        Evl evl = evlRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("{field_id_nv.text}" + id));
         model.addAttribute("evl", evl);
         return "update-evl";
     }
@@ -68,7 +68,7 @@ public class EvlController {
     
     @GetMapping("/delete/{id}")
     public String deleteEvl(@PathVariable("id") long id, Model model) {
-        Evl evl = evlRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid Evl id:" + id));
+        Evl evl = evlRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("{field_id_nv.text}" + id));
         evlRepository.delete(evl);
         model.addAttribute("evls", evlRepository.findAll());
         return "index";
