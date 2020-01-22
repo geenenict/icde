@@ -7,4 +7,6 @@ import org.springframework.http.HttpStatus;
 
 @ResponseStatus(value=HttpStatus.NOT_FOUND, reason="{evl_spec_na.text}")  // 404
 public class EvlNotFoundException extends RuntimeException {
+
+	private static final long serialVersionUID = 1L;
 }

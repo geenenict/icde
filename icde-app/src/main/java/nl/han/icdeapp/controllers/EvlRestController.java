@@ -15,37 +15,31 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-import nl.han.icdeapp.repositories.EvlRepository;
-import nl.han.icdeapp.services.EvlService;
+import nl.han.icdeapp.services.ServiceInterface;
 
 @RestController
-public class EvlRestController {
+public class EvlRestController implements BaseRestControllerInterface<Evl> {
 	
 	@Autowired
-	private EvlService evlService;
+	private ServiceInterface<Evl> evlService;
 	
-	// Service maken waar restcontroller mee praat, daar kan evlcontroller dan evt. ook mee praten
-	// GUI maken op basis van jQuery aanvullend op thymeleaf
-	
-	// Default CRUD actions
-
 	@GetMapping("/evls")
-	public List<Evl> retrieveAllEvls() {
+	public List<Evl> findAll() {
 		return evlService.findAll();
 	}
 	
 	@GetMapping("/evls/{id}")
-	public Evl retrieveEvl(@PathVariable long id) {
+	public Optional<Evl> findById(@PathVariable long id) {
 		Optional<Evl> evl = evlService.findById(id);
 
 		if (!evl.isPresent())
 			throw new EvlNotFoundException();
 
-		return evl.get();
+		return evl;
 	}
 	
 	@PostMapping("/evls")
-	public ResponseEntity<Object> createEvl(@RequestBody Evl evl) {
+	public ResponseEntity<Object> add(@RequestBody Evl evl) {
 		Evl savedEvl = evlService.add(evl);
 
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
@@ -55,7 +49,7 @@ public class EvlRestController {
 	}
 	
 	@PutMapping("/evls/{id}")
-	public ResponseEntity<Object> updateEvl(@RequestBody Evl evl, @PathVariable long id) {
+	public ResponseEntity<Object> update(@RequestBody Evl evl, @PathVariable long id) {
 
 		Optional<Evl> evlOptional = evlService.findById(id);
 
@@ -70,7 +64,7 @@ public class EvlRestController {
 	}
 	
 	@DeleteMapping("/evls/{id}")
-	public void deleteEvl(@PathVariable long id) {
+	public void delete(@PathVariable long id) {
 		evlService.delete(id);
 	}
     
