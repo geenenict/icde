@@ -21,53 +21,53 @@ public class SemesterController implements BaseControllerInterface<Semester> {
 	
 	// Forms / Thymeleaf
 	
-    @GetMapping("/gui-list-semester")
+    @GetMapping("/semester-list")
     public String list(Model model) {
         model.addAttribute("semesters", semesterService.findAll());
-        return "gui-list-semester";
+        return "semester-list";
     }
 	
-    @GetMapping("/gui-add-semester")
+    @GetMapping("/semester-add")
     public String addForm(Semester semester) {
-        return "gui-add-semester";
+        return "semester-add";
     }
 	
-    @PostMapping("/gui-add-semester")
+    @PostMapping("/semester-add")
     public String add(@Valid Semester semester, BindingResult result, Model model) {
         if (result.hasErrors()) {
-            return "gui-add-semester";
+            return "semester-add";
         }
         
         semesterService.add(semester);
         model.addAttribute("semesters", semesterService.findAll());
-        return "redirect:/gui-list-semester";
+        return "redirect:/semester-list";
     }
     
-    @GetMapping("/gui-edit-semester/{id}")
+    @GetMapping("/semester-edit/{id}")
     public String updateForm(@PathVariable("id") long id, Model model) {
         Semester semester = semesterService.findById(id).orElseThrow(() -> new IllegalArgumentException("#{field_id_nv.text}" + id));
         model.addAttribute("semester", semester);
-        return "gui-edit-semester";
+        return "semester-edit";
     }
     
-    @PostMapping("/gui-edit-semester/{id}")
+    @PostMapping("/semester-edit/{id}")
     public String update(@PathVariable("id") long id, @Valid Semester semester, BindingResult result, Model model) {
         if (result.hasErrors()) {
     		semester.setId(id);
-            return "gui-edit-semester";
+            return "semester-edit";
         }
         		        
         semesterService.update(semester);
         model.addAttribute("semesters", semesterService.findAll());
-        return "redirect:/gui-list-semester";
+        return "redirect:/semester-list";
     }
     
-    @GetMapping("/gui-delete-semester/{id}")
+    @GetMapping("/semester-delete/{id}")
     public String delete(@PathVariable("id") long id, Model model) {
         semesterService.findById(id).orElseThrow(() -> new IllegalArgumentException("{field_id_nv.text}" + id));
         semesterService.delete(id);
         model.addAttribute("semesters", semesterService.findAll());
-        return "redirect:/gui-list-semester";
+        return "redirect:/semester-list";
     }
     
 }

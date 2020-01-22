@@ -21,53 +21,53 @@ public class EvlController implements BaseControllerInterface<Evl> {
 	
 	// Forms / Thymeleaf
 	
-    @GetMapping("/gui-list-evl")
+    @GetMapping("/evl-list")
     public String list(Model model) {
         model.addAttribute("evls", evlService.findAll());
-        return "gui-list-evl";
+        return "evl-list";
     }
 	
-    @GetMapping("/gui-add-evl")
+    @GetMapping("/evl-add")
     public String addForm(Evl evl) {
-        return "gui-add-evl";
+        return "evl-add";
     }
 	
-    @PostMapping("/gui-add-evl")
+    @PostMapping("/evl-add")
     public String add(@Valid Evl evl, BindingResult result, Model model) {
         if (result.hasErrors()) {
-            return "gui-add-evl";
+            return "evl-add";
         }
         
         evlService.add(evl);
         model.addAttribute("evls", evlService.findAll());
-        return "redirect:/gui-list-evl";
+        return "redirect:/evl-list";
     }
     
-    @GetMapping("/gui-edit-evl/{id}")
+    @GetMapping("/evl-edit/{id}")
     public String updateForm(@PathVariable("id") long id, Model model) {
         Evl evl = evlService.findById(id).orElseThrow(() -> new IllegalArgumentException("#{field_id_nv.text}" + id));
         model.addAttribute("evl", evl);
-        return "gui-edit-evl";
+        return "evl-edit";
     }
     
-    @PostMapping("/gui-edit-evl/{id}")
+    @PostMapping("/evl-edit/{id}")
     public String update(@PathVariable("id") long id, @Valid Evl evl, BindingResult result, Model model) {
         if (result.hasErrors()) {
     		evl.setId(id);
-            return "gui-edit-evl";
+            return "evl-edit";
         }
         		        
         evlService.update(evl);
         model.addAttribute("evls", evlService.findAll());
-        return "redirect:/gui-list-evl";
+        return "redirect:/evl-list";
     }
     
-    @GetMapping("/gui-delete-evl/{id}")
+    @GetMapping("/evl-delete/{id}")
     public String delete(@PathVariable("id") long id, Model model) {
         evlService.findById(id).orElseThrow(() -> new IllegalArgumentException("{field_id_nv.text}" + id));
         evlService.delete(id);
         model.addAttribute("evls", evlService.findAll());
-        return "redirect:/gui-list-evl";
+        return "redirect:/evl-list";
     }
     
 }

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title th:text="#{title_prefix.text} + #{evl_update.text}"></title>
+        <title th:text="#{title_prefix.text} + #{evl_add.text}"></title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
@@ -11,13 +11,13 @@
     </head>
     <body>
         <div class="container my-5">
-            <h2 class="mb-5" th:text = "#{evl_update.text}"></h2>
+            <h2 class="mb-5"  th:text = "#{evl_new.text}"></h2>
             <div class="row">
                 <div class="col-md-6">
-                    <form action="#" th:action="@{/gui-edit-evl/{id}(id=${evl.id})}" th:object="${evl}" method="post">
+                    <form action="#" th:action="@{/evl-add}" th:object="${evl}" method="post">
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="name" class="col-form-label" th:value="#{field_name.text}"></label>
+                                <label for="name" class="col-form-label" th:text="#{field_name.text}"></label>
                                 <input type="text" th:field="*{name}" class="form-control" id="name" th:placeholder="#{field_name.text}">
                                 <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="text-danger"></span>
                             </div>
@@ -26,11 +26,11 @@
                                 <label for="email" class="col-form-label">Email</label>
                                 <input type="text" th:field="*{email}" class="form-control" id="email" placeholder="Email">
                                 <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger"></span>
-                            </div> -->
+                            </div>-->
                         </div>
                         <div class="row">
                             <div class="col-md-6 mt-5">
-                                <input type="submit" class="btn btn-primary" th:value="#{evl_edit.text}">
+                                <input type="submit" class="btn btn-primary" th:value="#{evl_add.text}">
                             </div>
                         </div>    
                     </form>
