@@ -3,6 +3,9 @@ package nl.han.icdeapp.controllers;
 import nl.han.icdeapp.exceptions.*;
 import nl.han.icdeapp.models.*;
 import java.util.Optional;
+
+import javax.validation.Valid;
+
 import java.net.URI;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +42,7 @@ public class EvlRestController implements BaseRestControllerInterface<Evl> {
 	}
 	
 	@PostMapping("/evls")
-	public ResponseEntity<Object> add(@RequestBody Evl evl) {
+	public ResponseEntity<Object> add(@RequestBody @Valid Evl evl) {
 		Evl savedEvl = evlService.add(evl);
 
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
@@ -49,7 +52,7 @@ public class EvlRestController implements BaseRestControllerInterface<Evl> {
 	}
 	
 	@PutMapping("/evls/{id}")
-	public ResponseEntity<Object> update(@RequestBody Evl evl, @PathVariable long id) {
+	public ResponseEntity<Object> update(@RequestBody @Valid Evl evl, @PathVariable long id) {
 
 		Optional<Evl> evlOptional = evlService.findById(id);
 
