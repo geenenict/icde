@@ -1,5 +1,3 @@
-- Voorbeeld app voor o.a. jQuery -> link naar bron
-- REST API conform guidelines + https://auth0.com/blog/exception-handling-and-i18n-on-spring-boots-apis/
 - Factory pattern -> https://www.baeldung.com/javax-validation
 
 - Auto H2 in mem database ook bij document uitschrijven -> https://www.tutorialspoint.com/spring_boot/spring_boot_introduction.htm
@@ -28,8 +26,6 @@
 
 
 
-
-
 Functionaliteit/Requirements implementeren:
 - De EVL-beschrijving (Modulebeschrijving EVL OOSE.docx). Idealiter kunnen we deze met de ICDE-tool genereren
 - De toetsplanning in Excel (toetsrooster-oosedt.xlsx) en als plaatje (globale-planning-voor-studenten.png), deze willen we ook kunnen genereren maar ook waarschuwingen inbouwen als er meer dan 3 toetsen/opdrachten tegelijk in 1 week lopen.
@@ -42,6 +38,7 @@ Refactor het onderstaande (of het is toegepast):
 - https://stackify.com/oop-concept-for-beginners-what-is-encapsulation/
 - Je kent verschillende manieren om software in grotere modules te verdelen zoals het gebruik van components, layer pattern en principes zoals high cohesion en low coupling.
 - Exceptions nalopen en uitbreiden/toevoegen -> verwerken in Service en bijbehorende Interface?
+ - https://auth0.com/blog/exception-handling-and-i18n-on-spring-boots-apis/ -> global exceptions + i18n + Oauth en spring sec. voor API
 
 - Nog een aantal componenten toevoegen
 - https://itnext.io/solid-principles-explanation-and-examples-715b975dcad4 -> Refactoren

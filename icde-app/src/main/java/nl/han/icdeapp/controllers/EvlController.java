@@ -40,7 +40,7 @@ public class EvlController implements BaseControllerInterface<Evl> {
         
         evlService.add(evl);
         model.addAttribute("evls", evlService.findAll());
-        return "gui-list-evl";
+        return "redirect:/gui-list-evl";
     }
     
     @GetMapping("/gui-edit-evl/{id}")
@@ -59,7 +59,7 @@ public class EvlController implements BaseControllerInterface<Evl> {
         		        
         evlService.update(evl);
         model.addAttribute("evls", evlService.findAll());
-        return "gui-list-evl";
+        return "redirect:/gui-list-evl";
     }
     
     @GetMapping("/gui-delete-evl/{id}")
@@ -67,7 +67,7 @@ public class EvlController implements BaseControllerInterface<Evl> {
         evlService.findById(id).orElseThrow(() -> new IllegalArgumentException("{field_id_nv.text}" + id));
         evlService.delete(id);
         model.addAttribute("evls", evlService.findAll());
-        return "gui-list-evl";
+        return "redirect:/gui-list-evl";
     }
     
 }

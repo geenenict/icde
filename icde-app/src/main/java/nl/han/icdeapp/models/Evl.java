@@ -11,7 +11,7 @@ public class Evl {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 	
-    @NotBlank(message = "{field_name_ne.text}")
+    @NotBlank(message = "#{field_name_ne.text}")
     private String name;
     
     // Constructors
