@@ -1,31 +1,16 @@
-- Login implementeren -> https://www.tutorialspoint.com/spring_boot/spring_boot_securing_web_applications.htm
- - Google Login met Oauth 
-  + https://www.tutorialspoint.com/spring_boot/spring_boot_google_oauth2_sign_in.htm
-  + Vastleggen verdere mogelijkheden -> https://www.tutorialspoint.com/spring_boot/spring_boot_oauth2_with_jwt.htm
-  + Oauth adapter pattern
-  + CORS security layer -> https://www.tutorialspoint.com/spring_boot/spring_boot_cors_support.htm
-  + Spring Security -> https://springframework.guru/spring-boot-web-application-part-2-using-thymeleaf/ 
-  + https://springframework.guru/using-the-h2-database-console-in-spring-boot-with-spring-security/
-  + https://auth0.com/blog/exception-handling-and-i18n-on-spring-boots-apis/
-
-### Verwerken ##
-
-- Observer pattern ontwerp nodig voor validaties -> hoe gaan we dit implementeren - Observer pattern -> lijst bijhouden van messages qua validatie 
--> wanneer de docent de opleiding live gaat maken dan moeten de messages leeg zijn 
--> checkLogica in elke controller. Deze worden aangeroepen door de observer bij elke wijziging
-- Interfaces/patterns etc. controle of dit juist is ingericht en uitbreiding alvast starten + Exceptions + Unit Tests
-- https://codeburst.io/understanding-solid-principles-interface-segregation-principle-b2d57026cf6c
-- https://stackify.com/interface-segregation-principle/
-
-######
-
+- Observer pattern voor validaties naar messages -> checks worden pas uitgevoerd wanneer de docent iets live gaat maken, 
+daarvoor is het simpelweg een list van messages -> checkLogic in elke controller? Door observer auto call bij elke wijziging?
 
 Exception handling en unit tests schrijven:
+- https://auth0.com/blog/exception-handling-and-i18n-on-spring-boots-apis/
 - Naast restcontroller test, ook service test en controller test? -> tests afronden
 - https://www.baeldung.com/spring-boot-bean-validation
 - https://mkyong.com/spring-boot/spring-rest-validation-example/
 
-- Observer pattern voor validaties naar messages
+- Interfaces en huidige patterns & Solid principes nalopen
+ - https://codeburst.io/understanding-solid-principles-interface-segregation-principle-b2d57026cf6c
+ - https://stackify.com/interface-segregation-principle/
+- Applicatie uitbreiden met meer domein-entiteiten
 
 Functionaliteit/Requirements implementeren:
 - De EVL-beschrijving (Modulebeschrijving EVL OOSE.docx). Idealiter kunnen we deze met de ICDE-tool genereren
