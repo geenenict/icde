@@ -1,14 +1,66 @@
 package nl.han.icdeapp.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Semester {
+    
+	// https://www.baeldung.com/spring-boot-crud-thymeleaf
+	
 	@Id
-	@GeneratedValue
-	private Long id;
-	private String name;
-	private String passportNumber;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
+
+    @Size(min = 2, max = 200, message = "Tijdelijke foutmelding tussen 2-200 karakters naam-veld")
+    private String name;
+        
+    // Constructors
+       
+	public Semester() {
+		super();
+	}
+
+    public Semester(String name) {
+    	super();
+        this.name = name;
+    }
+        
+    // Logic
+    
+    /*
+    public List<String> checkLogic() {
+
+    	List<String> checkMessages = new ArrayList<String>(); 
+    	
+    	if (this.name != null) {
+    		checkMessages.add("EVL (name) needs at least 1 Leeruitkomst");
+    	}
+    	
+    	return checkMessages;
+    }
+    */
+        	
+    // Getters and setters
+
+	public void setId(long id) {
+		this.id = id;
+	}
+    
+	public long getId() {
+		return id;
+	}
+
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+    @Override
+    public String toString() {
+        return "Semester{" + "id=" + id + ", name=" + name + "}";
+    }
+
 }
