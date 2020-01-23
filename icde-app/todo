@@ -1,4 +1,3 @@
-- Implement page layout (terug knop hier naartoe migreren) -> https://www.thymeleaf.org/doc/articles/layouts.html
 - Implementeren aan elkaar koppelen van objecten -> many to many
 
 Nalopen/Exceptions/i18N/Unit Tests:
@@ -33,17 +32,7 @@ Extra Views vanuit requirements:
 
 ### Afronden ###
 - Test gui with junit? Selenium buiten scope
-- JAR packagen als finaal product + branch merges volgens gitflow -> https://spring.io/guides/gs/accessing-data-mysql/
+- JAR packagen als finaal product + branch merges volgens gitflow
 - Technisch Ontwerp starten
 - Functioneel Ontwerp starten
 - Domein model maken voor de use case + SD maken voor use case
-
-
-
-
-                            <!--
-                            <div class="form-group col-md-6">
-                                <label for="email" class="col-form-label">Email</label>
-                                <input type="text" th:field="*{email}" class="form-control" id="email" placeholder="Email">
-                                <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger"></span>
-                            </div> -->
