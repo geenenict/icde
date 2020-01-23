@@ -12,7 +12,7 @@ public class Semester {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Size(min = 2, max = 200, message = "Tijdelijke foutmelding tussen 2-200 karakters naam-veld")
+    @Size(min = 2, max = 200)
     private String name;
         
     // Constructors

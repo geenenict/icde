@@ -1,4 +1,6 @@
 ### Waar mogelijk opschonen code ###
+ - Velden toevoegen Evl en Semester
+ 
  - Exception handling en unit tests schrijven:
  - https://auth0.com/blog/exception-handling-and-i18n-on-spring-boots-apis/
  - Naast restcontroller test, ook service test en controller test? -> tests afronden
@@ -13,6 +15,9 @@
  - Exceptions nalopen en uitbreiden/toevoegen -> verwerken in Service en bijbehorende Interface?
  - https://auth0.com/blog/exception-handling-and-i18n-on-spring-boots-apis/ -> global exceptions + i18n + Oauth en spring sec. voor API
  - https://itnext.io/solid-principles-explanation-and-examples-715b975dcad4 -> Refactoren
+
+- Views maken zoals onderwijsonline
+- Change listener voor overzicht recent toegevoegd als patroon -> changelogger view
 
 - Implementeren aan elkaar koppelen van objecten
 

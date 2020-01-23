@@ -74,7 +74,7 @@
 		    <groupId>org.hibernate.validator</groupId>
 		    <artifactId>hibernate-validator-annotation-processor</artifactId>
 		</dependency>
-
+		
 		<!-- Data Layer -->
 
 		<dependency>

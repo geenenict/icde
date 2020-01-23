@@ -1,4 +1,4 @@
-package nl.han.icdeapp;
+package nl.han.icdeapp.evl;
 
 import java.net.URI;
 import java.net.URISyntaxException;
