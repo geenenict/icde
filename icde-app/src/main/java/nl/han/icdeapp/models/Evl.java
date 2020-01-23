@@ -1,9 +1,14 @@
 package nl.han.icdeapp.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 
+import lombok.Data;
+
 @Entity
+@Data
 public class Evl {
     
 	// https://www.baeldung.com/spring-boot-crud-thymeleaf
@@ -15,17 +20,20 @@ public class Evl {
     @Size(min = 2, max = 200)
     private String name;
         
-    // Constructors
-       
-	public Evl() {
-		super();
-	}
+    @Size(min = 2, max = 200)
+    private String evlCode;
+    
+    @Min(value = 1)
+    @Max(value = 100)
+    private Integer studyPoints;
 
-    public Evl(String name) {
-    	super();
-        this.name = name;
-    }
-        
+    @Min(value = 1)
+    private Integer contactTime;
+    
+    // leeruitkomsten (gekoppeld)
+    // Calculate -> aantal studiepunten
+    // Aantal deeltentamens -> calculate
+    
     // Logic
     
     /*
@@ -40,27 +48,5 @@ public class Evl {
     	return checkMessages;
     }
     */
-        	
-    // Getters and setters
-
-	public void setId(long id) {
-		this.id = id;
-	}
-    
-	public long getId() {
-		return id;
-	}
-
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-    @Override
-    public String toString() {
-        return "Evl{" + "id=" + id + ", name=" + name + "}";
-    }
 
 }

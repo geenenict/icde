@@ -3,29 +3,35 @@ package nl.han.icdeapp.models;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 
+import lombok.Data;
+
 @Entity
+@Data
 public class Semester {
-    
-	// https://www.baeldung.com/spring-boot-crud-thymeleaf
-	
+    	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     @Size(min = 2, max = 200)
     private String name;
-        
-    // Constructors
-       
-	public Semester() {
-		super();
-	}
+    
+    @Size(min = 2, max = 200)
+    private String targetGroup;
 
-    public Semester(String name) {
-    	super();
-        this.name = name;
-    }
-        
+    @Size(min = 2, max = 2000)
+    private String description;
+    
+    @Size(min = 2, max = 500)
+    private String startingDemands;
+    
+    @Size(min = 2, max = 200)
+    private String teachingMethod;
+    
+    //private Evl evl1;
+    //private Evl evl2;
+    //private Semester nextSemester;
+            
     // Logic
     
     /*
@@ -40,27 +46,5 @@ public class Semester {
     	return checkMessages;
     }
     */
-        	
-    // Getters and setters
-
-	public void setId(long id) {
-		this.id = id;
-	}
-    
-	public long getId() {
-		return id;
-	}
-
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-    @Override
-    public String toString() {
-        return "Semester{" + "id=" + id + ", name=" + name + "}";
-    }
 
 }

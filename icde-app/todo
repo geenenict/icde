@@ -1,79 +1,40 @@
-### Waar mogelijk opschonen code ###
- - Velden toevoegen Evl en Semester
+ - Velden toevoegen Evl en Semester -> ook in GUI
  
- - Exception handling en unit tests schrijven:
- - https://auth0.com/blog/exception-handling-and-i18n-on-spring-boots-apis/
- - Naast restcontroller test, ook service test en controller test? -> tests afronden
- - https://www.baeldung.com/spring-boot-bean-validation
- - https://mkyong.com/spring-boot/spring-rest-validation-example/
- - Interfaces en huidige patterns & Solid principes nalopen
- - https://codeburst.io/understanding-solid-principles-interface-segregation-principle-b2d57026cf6c
- - https://stackify.com/interface-segregation-principle/
- - https://www.freecodecamp.org/news/unit-testing-services-endpoints-and-repositories-in-spring-boot-4b7d9dc2b772/
- - https://stackify.com/oop-concept-for-beginners-what-is-encapsulation/
- - Je kent verschillende manieren om software in grotere modules te verdelen zoals het gebruik van components, layer pattern en principes zoals high cohesion en low coupling.
- - Exceptions nalopen en uitbreiden/toevoegen -> verwerken in Service en bijbehorende Interface?
- - https://auth0.com/blog/exception-handling-and-i18n-on-spring-boots-apis/ -> global exceptions + i18n + Oauth en spring sec. voor API
- - https://itnext.io/solid-principles-explanation-and-examples-715b975dcad4 -> Refactoren
+ - Terug knop vanuit add/edit etc.
+ - Implement page layout -> https://www.thymeleaf.org/doc/articles/layouts.html
 
-- Views maken zoals onderwijsonline
-- Change listener voor overzicht recent toegevoegd als patroon -> changelogger view
+- Exceptions nalopen en uitbreiden/toevoegen -> verwerken in Service en bijbehorende Interface? 
+- Global exceptions + i18n + Oauth en spring sec. voor API + refactoren
+- Exception handling en unit tests schrijven:
+- Naast restcontroller test, ook service test en controller test? -> tests afronden
+- Interfaces en huidige patterns & Solid principes nalopen
 
 - Implementeren aan elkaar koppelen van objecten
+- Change listener voor overzicht recent toegevoegd als patroon -> changelogger view (ChangePropertyListener)
+- Views maken zoals onderwijsonline
 
 ### Business Logic implementatie ###
- - Elke actie welke via service gaat, roept op het betreffende object de logic check aan
-  - LogicCheck geeft een message-list terug met daarin de problemen of het probleem en slaat dit bij het object op
-  - Dit wordt in de GUI weergegeven in een losse kolom
-  - Declare interface welke checkLogic afdwingt -> of abstracte klasse?
+- Elke actie welke via service gaat, roept op het betreffende object de logic check aan
+ - LogicCheck geeft een message-list terug met daarin de problemen of het probleem en slaat dit bij het object op
+ - Dit wordt in de GUI weergegeven in een losse kolom
+ - Declare interface welke checkLogic afdwingt -> of abstracte klasse?
   
- - Applicatie uitbreiden met meer domein-entiteiten
- - De EVL-beschrijving (Modulebeschrijving EVL OOSE.docx). Idealiter kunnen we deze met de ICDE-tool genereren
- - De toetsplanning in Excel (toetsrooster-oosedt.xlsx) en als plaatje (globale-planning-voor-studenten.png), deze willen we ook kunnen genereren maar ook waarschuwingen inbouwen als er meer dan 3 toetsen/opdrachten tegelijk in 1 week lopen.
- - De lesplanning (Lesplanning-1819.xlsx). Hier zie je (vooral voor de eerste weken) een koppeling van een les aan rubrics. We willen met de ICDE-tool kunnen valideren of de lessen 100% aansluiten bij de toetsen/opdrachten die we geven. Elke toets/opdracht wordt beoordeeld op basis van beoordelingscriteria, deze criteria hebben we ook aan de lessen hangen. De tool zou kunnen checken of we wel voor alle toetsen lessen hebben en andersom.
+- Applicatie uitbreiden met meer domein-entiteiten
+- De EVL-beschrijving (Modulebeschrijving EVL OOSE.docx). Idealiter kunnen we deze met de ICDE-tool genereren
+- De toetsplanning in Excel (toetsrooster-oosedt.xlsx) en als plaatje (globale-planning-voor-studenten.png), deze willen we ook kunnen genereren maar ook waarschuwingen inbouwen als er meer dan 3 toetsen/opdrachten tegelijk in 1 week lopen.
+- De lesplanning (Lesplanning-1819.xlsx). Hier zie je (vooral voor de eerste weken) een koppeling van een les aan rubrics. We willen met de ICDE-tool kunnen valideren of de lessen 100% aansluiten bij de toetsen/opdrachten die we geven. Elke toets/opdracht wordt beoordeeld op basis van beoordelingscriteria, deze criteria hebben we ook aan de lessen hangen. De tool zou kunnen checken of we wel voor alle toetsen lessen hebben en andersom.
 
-- Add and Map Error pages
-- Implement page layout -> https://www.thymeleaf.org/doc/articles/layouts.html
-- https://www.tutorialspoint.com/spring_boot/spring_boot_file_handling.htm -> File upload ook in requirements en implementeren
-
+- Add and Map Error pages (link naar niet bestaande pagina om aan te tonen)
+- https://www.baeldung.com/swagger-2-documentation-for-spring-rest-api -> Geavanceerde gedeelte doornemen (minimaal Bean Validation implementatie afronden)
 - Alles testen, nalopen en checken op verbeterpunten
 - Werkend product voor toevoegen opleiding met EVL's en lessen
 - Alle overige componenten toevoegen en het product afronden
-- https://www.baeldung.com/swagger-2-documentation-for-spring-rest-api -> Geavanceerde gedeelte doornemen (minimaal Bean Validation implementatie afronden)
 
-# spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
-# https://www.baeldung.com/spring-boot-failed-to-configure-data-source
-# https://www.tutorialspoint.com/spring_boot/spring_boot_application_properties.htm
 
-# ToDo -> exception handling voor de API uitbreiden
-# @ControllerAdvice
-# @ExceptionHandler
-# https://www.tutorialspoint.com/spring_boot/spring_boot_exception_handling.htm
-# Interceptor? -> https://www.tutorialspoint.com/spring_boot/spring_boot_interceptor.htm
-# Filter? -> https://www.tutorialspoint.com/spring_boot/spring_boot_servlet_filter.htm
-
-    /*
-    @AssertTrue
-    @Size(min = 10, max = 200, message = "About Me must be between 10 and 200 characters")
-    @Min(value = 18, message = "Age should not be less than 18")
-    @Max(value = 150, message = "Age should not be greater than 150")
-    @Email(message = "Email should be valid")
-    @NotEmpty
-    
-    List<@NotBlank String> preferences;
-    
-    public Optional<@Past LocalDate> getDateOfBirth() {
-    return Optional.of(dateOfBirth);
-}
-    
-    @Past and @PastOrPresent – validate that a date value is in the past or the past including the present; can be applied to date types including those added in Java 8
-@Future and @FutureOrPresent – validates that a date value is in the future, or in the future including the present
-     * */
-
+### Afronden ###
 - Test gui with junit? Selenium buiten scope
 - Jenkins voor oplevering?
 - JAR packagen als finaal product + branch merges volgens gitflow -> https://spring.io/guides/gs/accessing-data-mysql/
-
 - Technisch Ontwerp starten
 - Functioneel Ontwerp starten
 - Domein model maken voor de use case + SD maken voor use case
