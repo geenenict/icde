@@ -21,6 +21,9 @@
                             <thead>
                                 <tr>
                                     <th th:text="#{field_name.text}"></th>
+                                    <th th:text="#{field_evlcode.text}"></th>
+                                    <th th:text="#{field_studypoints.text}"></th>
+                                    <th th:text="#{field_contacttime.text}"></th>
                                     <th th:text="#{field_edit.text}"></th>
                                     <th th:text="#{field_delete.text}"></th>
                                 </tr>
@@ -28,6 +31,9 @@
                             <tbody>
                                 <tr th:each="evl : ${evls}">
                                     <td th:text="${evl.name}"></td>
+                                    <td th:text="${evl.evlCode}"></td>
+                                    <td th:text="${evl.studyPoints}"></td>
+                                    <td th:text="${evl.contactTime}"></td>
                                     <td><a th:href="@{/evl-edit/{id}(id=${evl.id})}" class="btn btn-primary"><i class="fas fa-user-edit ml-2"></i></a></td>
                                     <td><a th:href="@{/evl-delete/{id}(id=${evl.id})}" class="btn btn-primary"><i class="fas fa-user-times ml-2"></i></a></td>
                                 </tr>

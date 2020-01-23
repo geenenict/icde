@@ -10,9 +10,7 @@ import lombok.Data;
 @Entity
 @Data
 public class Evl {
-    
-	// https://www.baeldung.com/spring-boot-crud-thymeleaf
-	
+    	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;

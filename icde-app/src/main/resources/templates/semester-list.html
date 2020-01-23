@@ -21,6 +21,10 @@
                             <thead>
                                 <tr>
                                     <th th:text="#{field_name.text}"></th>
+                                    <th th:text="#{field_targetgroup.text}"></th>
+                                    <th th:text="#{field_description.text}"></th>
+                                    <th th:text="#{field_startingdemands.text}"></th>
+                                    <th th:text="#{field_teachingmethod.text}"></th>
                                     <th th:text="#{field_edit.text}"></th>
                                     <th th:text="#{field_delete.text}"></th>
                                 </tr>
@@ -28,6 +32,10 @@
                             <tbody>
                                 <tr th:each="semester : ${semesters}">
                                     <td th:text="${semester.name}"></td>
+                                    <td th:text="${semester.targetGroup}"></td>
+                                    <td th:text="${semester.description}"></td>
+                                    <td th:text="${semester.startingDemands}"></td>
+                                    <td th:text="${semester.teachingMethod}"></td>
                                     <td><a th:href="@{/semester-edit/{id}(id=${semester.id})}" class="btn btn-primary"><i class="fas fa-user-edit ml-2"></i></a></td>
                                     <td><a th:href="@{/semester-delete/{id}(id=${semester.id})}" class="btn btn-primary"><i class="fas fa-user-times ml-2"></i></a></td>
                                 </tr>

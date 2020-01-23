@@ -16,17 +16,31 @@
                 <div class="col-md-6">
                     <form action="#" th:action="@{/semester-add}" th:object="${semester}" method="post">
                         <div class="row">
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-12">
                                 <label for="name" class="col-form-label" th:text="#{field_name.text}"></label>
                                 <input type="text" th:field="*{name}" class="form-control" id="name" th:placeholder="#{field_name.text}">
                                 <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="text-danger"></span>
                             </div>
-                            <!--
-                            <div class="form-group col-md-6">
-                                <label for="email" class="col-form-label">Email</label>
-                                <input type="text" th:field="*{email}" class="form-control" id="email" placeholder="Email">
-                                <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger"></span>
-                            </div>-->
+                            <div class="form-group col-md-12">
+                                <label for="targetgroup" class="col-form-label" th:text="#{field_targetgroup.text}"></label>
+                                <input type="text" th:field="*{targetGroup}" class="form-control" id="targetgroup" th:placeholder="#{field_targetgroup.text}">
+                                <span th:if="${#fields.hasErrors('targetGroup')}" th:errors="*{targetGroup}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="description" class="col-form-label" th:text="#{field_description.text}"></label>
+                                <input type="text" th:field="*{description}" class="form-control" id="description" th:placeholder="#{field_description.text}">
+                                <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="startingdemands" class="col-form-label" th:text="#{field_startingdemands.text}"></label>
+                                <input type="text" th:field="*{startingDemands}" class="form-control" id="startingdemands" th:placeholder="#{field_startingdemands.text}">
+                                <span th:if="${#fields.hasErrors('startingDemands')}" th:errors="*{startingDemands}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="teachingmethod" class="col-form-label" th:text="#{field_teachingmethod.text}"></label>
+                                <input type="text" th:field="*{teachingMethod}" class="form-control" id="teachingmethod" th:placeholder="#{field_teachingmethod.text}">
+                                <span th:if="${#fields.hasErrors('teachingMethod')}" th:errors="*{teachingMethod}" class="text-danger"></span>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6 mt-5">
@@ -34,6 +48,8 @@
                             </div>
                         </div>    
                     </form>
+                    <p class="my-5"><a th:href="@{semester-list}" class="btn btn-primary" th:text="#{semester_back_to.text}"></a></p>
+					<p class="my-5"><a href="/" class="btn btn-primary" th:text="#{back_to_homepage.text}"></a></p>
                 </div>
             </div>
         </div>
