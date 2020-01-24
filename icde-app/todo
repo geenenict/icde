@@ -1,37 +1,39 @@
-- Implementeren aan elkaar koppelen van objecten -> many to many
+- Postman uitbreiden met nieuwe mogelijkheden
 
-Nalopen/Exceptions/i18N/Unit Tests:
+### Nalopen/Exceptions/i18N/Unit Tests ###
 - Exceptions nalopen en uitbreiden/toevoegen -> verwerken in Service en bijbehorende Interface? 
 - Global exceptions + i18n + Oauth en spring sec. voor API + refactoren
 - Exception handling en unit tests schrijven:
 - Naast restcontroller test, ook service test en controller test? -> tests afronden
 - Interfaces en huidige patterns & Solid principes nalopen
+- Tests voor GUI
 
+### Entities & Views ###
+- Zoveel mogelijk objecten uit domein model toevoegen om view te kunnen maken
 - Views maken zoals onderwijsonline
 
-### Business Logic implementatie ###
+### Business Logic Pattern implementatie ###
 - Change listener voor overzicht recent toegevoegd als patroon -> changelogger view (ChangePropertyListener)
 
 - Elke actie welke via service gaat, roept op het betreffende object de logic check aan
  - LogicCheck geeft een message-list terug met daarin de problemen of het probleem en slaat dit bij het object op
  - Dit wordt in de GUI weergegeven in een losse kolom
  - Declare interface welke checkLogic afdwingt -> of abstracte klasse?
-  
-- Applicatie uitbreiden met meer domein-entiteiten
 
-Extra Views vanuit requirements:
+### Extra Views ###
 - De EVL-beschrijving (Modulebeschrijving EVL OOSE.docx). Idealiter kunnen we deze met de ICDE-tool genereren
 - De toetsplanning in Excel (toetsrooster-oosedt.xlsx) en als plaatje (globale-planning-voor-studenten.png), deze willen we ook kunnen genereren maar ook waarschuwingen inbouwen als er meer dan 3 toetsen/opdrachten tegelijk in 1 week lopen.
 - De lesplanning (Lesplanning-1819.xlsx). Hier zie je (vooral voor de eerste weken) een koppeling van een les aan rubrics. We willen met de ICDE-tool kunnen valideren of de lessen 100% aansluiten bij de toetsen/opdrachten die we geven. Elke toets/opdracht wordt beoordeeld op basis van beoordelingscriteria, deze criteria hebben we ook aan de lessen hangen. De tool zou kunnen checken of we wel voor alle toetsen lessen hebben en andersom.
 
+### GUI afronden + Swagger ###
 - Add and Map Error pages (link naar niet bestaande pagina om aan te tonen)
 - https://www.baeldung.com/swagger-2-documentation-for-spring-rest-api -> Geavanceerde gedeelte doornemen (minimaal Bean Validation implementatie afronden)
-- Alles testen, nalopen en checken op verbeterpunten
-
-- Alle overige componenten toevoegen en het product afronden
 
 ### Afronden ###
-- Test gui with junit? Selenium buiten scope
+- Alles testen, nalopen en checken op verbeterpunten
+- Alle overige componenten toevoegen en het product afronden
+
+### Vrijdag ###
 - JAR packagen als finaal product + branch merges volgens gitflow
 - Technisch Ontwerp starten
 - Functioneel Ontwerp starten

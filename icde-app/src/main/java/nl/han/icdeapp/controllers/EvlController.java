@@ -28,7 +28,7 @@ public class EvlController implements BaseControllerInterface<Evl> {
     }
 	
     @GetMapping("/evl-add")
-    public String addForm(Evl evl) {
+    public String addForm(Evl evl, Model model) {
         return "evl-add";
     }
 	

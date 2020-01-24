@@ -19,6 +19,9 @@ public class SemesterController implements BaseControllerInterface<Semester> {
 	@Autowired
 	private ServiceInterface<Semester> semesterService;
 	
+	@Autowired
+	private ServiceInterface<Evl> evlService;
+	
 	// Forms / Thymeleaf
 	
     @GetMapping("/semester-list")
@@ -28,7 +31,8 @@ public class SemesterController implements BaseControllerInterface<Semester> {
     }
 	
     @GetMapping("/semester-add")
-    public String addForm(Semester semester) {
+    public String addForm(Semester semester, Model model) {
+    	model.addAttribute("evls", evlService.findAll());
         return "semester-add";
     }
 	
@@ -47,6 +51,7 @@ public class SemesterController implements BaseControllerInterface<Semester> {
     public String updateForm(@PathVariable("id") long id, Model model) {
         Semester semester = semesterService.findById(id).orElseThrow(() -> new IllegalArgumentException("#{field_id_nv.text}" + id));
         model.addAttribute("semester", semester);
+    	model.addAttribute("evls", evlService.findAll());
         return "semester-edit";
     }
     
@@ -56,7 +61,7 @@ public class SemesterController implements BaseControllerInterface<Semester> {
     		semester.setId(id);
             return "semester-edit";
         }
-        		        
+    	
         semesterService.update(semester);
         model.addAttribute("semesters", semesterService.findAll());
         return "redirect:/semester-list";

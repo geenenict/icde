@@ -27,7 +27,7 @@ public class Evl {
 
     @Min(value = 1)
     private Integer contactTime;
-    
+        
     // leeruitkomsten (gekoppeld)
     // Calculate -> aantal studiepunten
     // Aantal deeltentamens -> calculate

@@ -36,6 +36,13 @@
                                 <input type="text" th:field="*{teachingMethod}" class="form-control" id="teachingmethod" th:placeholder="#{field_teachingmethod.text}">
                                 <span th:if="${#fields.hasErrors('teachingMethod')}" th:errors="*{teachingMethod}" class="text-danger"></span>
                             </div>
+                            <div class="form-group col-md-12">
+	                            <label for="firstevlofsemester" class="col-form-label" th:text="#{field_firstevlofsemester.text}"></label>
+	                			<select id="firstevlofsemester" th:field="*{firstEvlOfSemester}" class="form-control selectpicker">
+	                				<option th:value="0" th:text="#{field_selectfirstevlofsemester.text}"></option>
+	                				<option th:each="evl : ${evls}" th:value="${evl.id}" th:text="${evl.name}"></option>
+	            				</select>
+            				</div>
                         </div>
                         <div class="row">
                             <div class="col-md-6 mt-5">
@@ -43,7 +50,7 @@
                             </div>
                         </div>    
                     </form>
-                    <p class="my-5"><a th:href="@{semester-list}" class="btn btn-primary" th:text="#{semester_back_to.text}"></a></p>
+                    <p class="my-5"><a th:href="@{/semester-list}" class="btn btn-primary" th:text="#{semester_back_to.text}"></a></p>
                 </div>
             </div>
             
