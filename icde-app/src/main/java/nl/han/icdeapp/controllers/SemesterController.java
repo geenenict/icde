@@ -33,6 +33,7 @@ public class SemesterController implements BaseControllerInterface<Semester> {
     @GetMapping("/semester-add")
     public String addForm(Semester semester, Model model) {
     	model.addAttribute("evls", evlService.findAll());
+    	model.addAttribute("semesters", semesterService.findAll());
         return "semester-add";
     }
 	
@@ -52,6 +53,7 @@ public class SemesterController implements BaseControllerInterface<Semester> {
         Semester semester = semesterService.findById(id).orElseThrow(() -> new IllegalArgumentException("#{field_id_nv.text}" + id));
         model.addAttribute("semester", semester);
     	model.addAttribute("evls", evlService.findAll());
+    	model.addAttribute("semesters", semesterService.findAll());
         return "semester-edit";
     }
     

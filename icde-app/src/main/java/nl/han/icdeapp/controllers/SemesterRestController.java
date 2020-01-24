@@ -25,10 +25,7 @@ public class SemesterRestController implements BaseRestControllerInterface<Semes
 	
 	@Autowired
 	private ServiceInterface<Semester> semesterService;
-	
-	@Autowired
-	private ServiceInterface<Evl> evlService;
-	
+		
 	@GetMapping("/semesters")
 	public List<Semester> findAll() {
 		return semesterService.findAll();

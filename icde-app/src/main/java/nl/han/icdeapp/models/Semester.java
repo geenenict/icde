@@ -29,14 +29,14 @@ public class Semester {
     private String teachingMethod;
     
     // External relations to Evl
-    @ManyToOne(optional = true, fetch = FetchType.LAZY)
+    @ManyToOne(optional = true)
     private Evl firstEvlOfSemester;
+
+    @ManyToOne(optional = true)
+    private Evl secondEvlOfSemester;
     
-    //@ManyToOne
-    //private Evl secondEvlOfSemester;
-    
-    //@OneToOne
-    //private Semester nextSemester;
+    @ManyToOne(optional = true)
+    private Semester nextSemester;
             
     // Logic
     

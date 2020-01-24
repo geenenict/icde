@@ -43,6 +43,20 @@
 	                				<option th:each="evl : ${evls}" th:value="${evl.id}" th:text="${evl.name}"></option>
 	            				</select>
             				</div>
+                            <div class="form-group col-md-12">
+	                            <label for="secondevlofsemester" class="col-form-label" th:text="#{field_secondevlofsemester.text}"></label>
+	                			<select id="secondevlofsemester" th:field="*{secondEvlOfSemester}" class="form-control selectpicker">
+	                				<option th:value="0" th:text="#{field_selectsecondevlofsemester.text}"></option>
+	                				<option th:each="evl : ${evls}" th:value="${evl.id}" th:text="${evl.name}"></option>
+	            				</select>
+            				</div>
+                            <div class="form-group col-md-12">
+	                            <label for="nextsemester" class="col-form-label" th:text="#{field_nextsemester.text}"></label>
+	                			<select id="nextsemester" th:field="*{nextSemester}" class="form-control selectpicker">
+	                				<option th:value="0" th:text="#{field_selectnextsemester.text}"></option>
+	                				<option th:each="semester : ${semesters}" th:value="${semester.id}" th:text="${semester.name}"></option>
+	            				</select>
+            				</div>
                         </div>
                         <div class="row">
                             <div class="col-md-6 mt-5">

@@ -1,6 +1,4 @@
 package nl.han.icdeapp.evl;
-import static org.assertj.core.api.Assertions.assertThat;
-import org.junit.Test;
 
 public class EvlTest {
     /*

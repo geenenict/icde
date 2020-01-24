@@ -2,8 +2,6 @@ package nl.han.icdeapp.services;
 import java.util.List;
 import java.util.Optional;
 
-import nl.han.icdeapp.models.*;
-
 public interface ServiceInterface<T> {
 
 	public List<T> findAll();

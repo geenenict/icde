@@ -1,16 +1,19 @@
-- Postman uitbreiden met nieuwe mogelijkheden
-
-### Nalopen/Exceptions/i18N/Unit Tests ###
+### Tussentijdse Controle ###
 - Exceptions nalopen en uitbreiden/toevoegen -> verwerken in Service en bijbehorende Interface? 
 - Global exceptions + i18n + Oauth en spring sec. voor API + refactoren
 - Exception handling en unit tests schrijven:
 - Naast restcontroller test, ook service test en controller test? -> tests afronden
 - Interfaces en huidige patterns & Solid principes nalopen
 - Tests voor GUI
+- GRASP / SOLID nalopen
 
 ### Entities & Views ###
+- Check log file -> hoe log ik hier naartoe?
+- nextSemester deadlock fixen -> het hudige semester zelf niet beschikbaar maken om te koppelen + delete niet mogelijk voordat koppeling is opgehefd -> hier foutmelding voor maken
+- Postman uitbreiden, exporteren en committen
 - Zoveel mogelijk objecten uit domein model toevoegen om view te kunnen maken
 - Views maken zoals onderwijsonline
+- CheckLogic toevoegen
 
 ### Business Logic Pattern implementatie ###
 - Change listener voor overzicht recent toegevoegd als patroon -> changelogger view (ChangePropertyListener)
@@ -30,11 +33,7 @@
 - https://www.baeldung.com/swagger-2-documentation-for-spring-rest-api -> Geavanceerde gedeelte doornemen (minimaal Bean Validation implementatie afronden)
 
 ### Afronden ###
+- Postman nogmaals nalopen en updaten
 - Alles testen, nalopen en checken op verbeterpunten
 - Alle overige componenten toevoegen en het product afronden
-
-### Vrijdag ###
 - JAR packagen als finaal product + branch merges volgens gitflow
-- Technisch Ontwerp starten
-- Functioneel Ontwerp starten
-- Domein model maken voor de use case + SD maken voor use case
