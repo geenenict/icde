@@ -6,9 +6,4 @@ import org.junit.jupiter.api.Test;
 
 class EvlControllerTest {
 
-	@Test
-	void test() {
-		fail("Not yet implemented");
-	}
-
 }

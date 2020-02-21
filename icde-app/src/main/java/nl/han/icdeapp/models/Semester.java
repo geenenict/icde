@@ -38,19 +38,4 @@ public class Semester {
     @ManyToOne(optional = true)
     private Semester nextSemester;
             
-    // Logic
-    
-    /*
-    public List<String> checkLogic() {
-
-    	List<String> checkMessages = new ArrayList<String>(); 
-    	
-    	if (this.name != null) {
-    		checkMessages.add("EVL (name) needs at least 1 Leeruitkomst");
-    	}
-    	
-    	return checkMessages;
-    }
-    */
-
 }

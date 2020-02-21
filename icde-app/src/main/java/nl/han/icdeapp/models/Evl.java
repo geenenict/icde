@@ -11,6 +11,22 @@ import lombok.Data;
 @Data
 public class Evl {
     	
+	/*
+	 Voorbeeld voor tijdens DEMO:
+	 
+	  @Size(min = 10, max = 200, message = "About Me must be between 10 and 200 characters")
+ 	  @Min(value = 18, message = "Age should not be less than 18")
+ 	  @Max(value = 150, message = "Age should not be greater than 150")
+ 	  @Email(message = "Email should be valid")
+ 	  @NotEmpty
+	
+ 	  List<@NotBlank String> preferences;
+
+ 	  public Optional<@Past LocalDate> getDateOfBirth() {
+ 	  	  return Optional.of(dateOfBirth);
+	  }
+	 */
+	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -28,23 +44,4 @@ public class Evl {
     @Min(value = 1)
     private Integer contactTime;
         
-    // leeruitkomsten (gekoppeld)
-    // Calculate -> aantal studiepunten
-    // Aantal deeltentamens -> calculate
-    
-    // Logic
-    
-    /*
-    public List<String> checkLogic() {
-
-    	List<String> checkMessages = new ArrayList<String>(); 
-    	
-    	if (this.name != null) {
-    		checkMessages.add("EVL (name) needs at least 1 Leeruitkomst");
-    	}
-    	
-    	return checkMessages;
-    }
-    */
-
 }

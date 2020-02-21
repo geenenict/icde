@@ -14,12 +14,7 @@ import org.junit.Assert;
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class EvlRestControllerTest 
-{    
-	// https://www.tutorialspoint.com/spring_boot/spring_boot_rest_controller_unit_test.htm -> Waarom de hele REST API opnieuw schrijven?
-	// https://www.baeldung.com/mockito-annotations
-	
-	// Implementeren -> https://howtodoinjava.com/spring-boot2/testing/spring-boot-junit-resttemplate/
-	
+{    	
     @LocalServerPort
     int serverPort;
 	
