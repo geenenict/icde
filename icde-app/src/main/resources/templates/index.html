@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<title th:text="#{title_prefix.text} + #{homepage_title.text}"></title>
+		<meta th:include="layout :: header" th:remove="tag" />
+	</head>
+    <body>
+        <div class="container my-5">
+        
+        	<h1 th:text="#{welcome.text}"></h1>
+        	
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="my-5"><a th:href="@{evl-list}" class="btn btn-primary" th:text="#{evl.text}"></a></p>
+                    <p class="my-5"><a th:href="@{semester-list}" class="btn btn-primary" th:text="#{semester.text}"></a></p>
+                    <p class="my-5">
+                    	<a href="/?language=nl" class="btn btn-primary" th:text="#{nl.text}"></a>
+                    	<a href="/?language=en" class="btn btn-primary" th:text="#{en.text}"></a>
+                    	<a href="/swagger-ui.html" target="_blank" class="btn btn-primary" th:text="#{swagger.text}"></a>
+                    	<a href="/h2-console/" target="_blank" class="btn btn-primary" th:text="#{h2.text}"></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

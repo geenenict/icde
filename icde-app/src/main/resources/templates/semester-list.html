@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title th:text="#{title_prefix.text} + #{semester.text}"></title>
+  <meta th:include="layout :: header" th:remove="tag" />
+</head>
+    <body>
+        <div th:switch="${semesters}" class="container my-5">
+        	<h1 th:text="#{welcome.text}"></h1>
+            <div class="row">
+                <div class="col-md-6">
+                    <div th:case="*">
+                        <h2 class="my-5" th:text="#{semester.text}"></h2>
+                        <p th:if= "${#lists.size(semesters)} < 1" th:text="#{semester_na.text}"></p>
+                        <table th:if= "${#lists.size(semesters)} > 0" class="table table-striped table-responsive-md">
+                            <thead>
+                                <tr>
+                                    <th th:text="#{field_name.text}"></th>
+                                    <th th:text="#{field_targetgroup.text}"></th>
+                                    <th th:text="#{field_description.text}"></th>
+                                    <th th:text="#{field_startingdemands.text}"></th>
+                                    <th th:text="#{field_teachingmethod.text}"></th>
+                                    <th th:text="#{field_firstevlofsemester.text}"></th>
+                                    <th th:text="#{field_secondevlofsemester.text}"></th>
+                                    <th th:text="#{field_nextsemester.text}"></th>
+                                    <th th:text="#{field_edit.text}"></th>
+                                    <th th:text="#{field_delete.text}"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="semester : ${semesters}">
+                                    <td th:text="${semester.name}"></td>
+                                    <td th:text="${semester.targetGroup}"></td>
+                                    <td th:text="${semester.description}"></td>
+                                    <td th:text="${semester.startingDemands}"></td>
+                                    <td th:text="${semester.teachingMethod}"></td>
+                                    <td th:text="${semester.firstEvlOfSemester?.name}"></td>
+                                    <td th:text="${semester.secondEvlOfSemester?.name}"></td>
+                                    <td th:text="${semester.nextSemester?.name}"></td>
+                                    <td><a th:href="@{/semester-edit/{id}(id=${semester.id})}" class="btn btn-primary"><i class="fas fa-user-edit ml-2"></i></a></td>
+                                    <td><a th:href="@{/semester-delete/{id}(id=${semester.id})}" class="btn btn-primary"><i class="fas fa-user-times ml-2"></i></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>      
+                    <p class="my-5"><a href="/semester-add" class="btn btn-primary"><i class="fas fa-user-plus ml-2"></i></a></p>
+                </div>
+            </div>
+            
+            <div th:replace="layout :: footer"></div>
+        </div>
+    </body>
+</html>

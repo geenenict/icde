@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title th:text="#{title_prefix.text} + #{evl.text}"></title>
+		<meta th:include="layout :: header" th:remove="tag" />
+	</head>
+    <body>
+        <div th:switch="${evls}" class="container my-5">
+        	<h1 th:text="#{welcome.text}"></h1>
+            <div class="row">
+                <div class="col-md-6">
+                    <div th:case="*">
+                        <h2 class="my-5" th:text="#{evl.text}"></h2>
+                        <p th:if= "${#lists.size(evls)} < 1" th:text="#{evl_na.text}"></p>
+                        <table th:if= "${#lists.size(evls)} > 0" class="table table-striped table-responsive-md">
+                            <thead>
+                                <tr>
+                                    <th th:text="#{field_name.text}"></th>
+                                    <th th:text="#{field_evlcode.text}"></th>
+                                    <th th:text="#{field_studypoints.text}"></th>
+                                    <th th:text="#{field_contacttime.text}"></th>
+                                    <th th:text="#{field_edit.text}"></th>
+                                    <th th:text="#{field_delete.text}"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="evl : ${evls}">
+                                    <td th:text="${evl.name}"></td>
+                                    <td th:text="${evl.evlCode}"></td>
+                                    <td th:text="${evl.studyPoints}"></td>
+                                    <td th:text="${evl.contactTime}"></td>
+                                    <td><a th:href="@{/evl-edit/{id}(id=${evl.id})}" class="btn btn-primary"><i class="fas fa-user-edit ml-2"></i></a></td>
+                                    <td><a th:href="@{/evl-delete/{id}(id=${evl.id})}" class="btn btn-primary"><i class="fas fa-user-times ml-2"></i></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>      
+                    <p class="my-5"><a href="/evl-add" class="btn btn-primary"><i class="fas fa-user-plus ml-2"></i></a></p>
+                </div>
+            </div>
+            
+            <div th:replace="layout :: footer"></div>
+        </div>
+    </body>
+</html>
